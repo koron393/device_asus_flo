@@ -1,0 +1,12 @@
+[
+ {
+   "repository":  "Mahdi-Rom/android_vendor_asus",
+   "target_path": "vendor/asus",
+   "branch":      "kk-4.4"
+ },
+ {
+   "repository":  "Mahdi-Rom/android_device_asus_flo-kernel",
+   "target_path": "device/asus/flo-kernel",
+   "branch":      "kk-4.4"
+ }
+]
