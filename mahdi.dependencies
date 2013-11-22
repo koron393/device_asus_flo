@@ -13,5 +13,10 @@
    "repository":  "Mahdi-Rom/android_vendor_broadcom",
    "target_path": "vendor/broadcom",
    "branch":      "kk-4.4"
+ },
+ {
+   "repository":  "Mahdi-Rom/android_kernel_asus_flo",
+   "target_path": "kernel/asus/flo",
+   "branch":      "kk-4.4"
  }
 ]
