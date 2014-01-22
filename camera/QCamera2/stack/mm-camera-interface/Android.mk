@@ -30,7 +30,7 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_C_INCLUDES += hardware/qcom/media/mm-core/inc
 
-LOCAL_CFLAGS += -Wall -Werror
+LOCAL_CFLAGS += -Wall -Werror -Wno-unused-but-set-variable
 
 LOCAL_SRC_FILES := $(MM_CAM_FILES)
 
