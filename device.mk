@@ -20,18 +20,23 @@
 # Everything in this directory will become public
 
 PRODUCT_PROPERTY_OVERRIDES := \
-    ro.carrier=wifi-only
+	ro.carrier=wifi-only
 
 PRODUCT_COPY_FILES := \
-    device/asus/flo/fstab.flo:root/fstab.flo \
-    device/asus/flo/init.flo.rc:root/init.flo.rc
+	device/asus/flo/fstab.flo:root/fstab.flo \
+	device/asus/flo/init.flo.rc:root/init.flo.rc
 
 PRODUCT_PACKAGES += \
 	camera.flo
 
 # NFC
 PRODUCT_PACKAGES += \
-    nfc_nci.flo
+	nfc_nci.flo
+
+PRODUCT_PACKAGES += \
+        mkfs.f2fs \
+        fsck.f2fs \
+        fibmap.f2fs
 
 # the actual meat of the device-specific product definition
 $(call inherit-product, device/asus/flo/device-common.mk)
