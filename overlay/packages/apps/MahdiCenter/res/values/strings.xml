@@ -16,6 +16,6 @@
 -->
 
 <resources>
-    <string name="download_url">http://forum.xda-developers.com/showthread.php?t=2581058</string>
+    <string name="xda_url">http://forum.xda-developers.com/showthread.php?t=2581058</string>
     <string name="xda_summary">Visit the Nexus 7 XDA thread</string>
 </resources>
