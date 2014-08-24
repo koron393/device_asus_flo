@@ -16,6 +16,20 @@ LOCAL_SRC_FILES := \
 LOCAL_CFLAGS := -Wall
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS
 
+ifeq ($(TARGET_QCOM_MEDIA_VARIANT),caf)
+LOCAL_C_INCLUDES := \
+        $(LOCAL_PATH)/../stack/common \
+        frameworks/native/include/media/openmax \
+        frameworks/native/include \
+        frameworks/av/include \
+        hardware/qcom/media-caf/libstagefrighthw \
+        system/media/camera/include \
+        $(LOCAL_PATH)/../../mm-image-codec/qexif \
+        $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
+        $(LOCAL_PATH)/../util
+LOCAL_C_INCLUDES += \
+        hardware/qcom/display-caf/libgralloc
+else
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../stack/common \
         frameworks/native/include/media/openmax \
@@ -26,13 +40,13 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../../mm-image-codec/qexif \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
         $(LOCAL_PATH)/../util
-
 ifneq ($(filter msm8974 msm8x74,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_C_INCLUDES += \
         hardware/qcom/display/msm8974/libgralloc
 else
 LOCAL_C_INCLUDES += \
         hardware/qcom/display/msm8960/libgralloc
+endif
 endif
 
 LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl

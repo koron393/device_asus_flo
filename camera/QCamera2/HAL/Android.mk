@@ -21,6 +21,18 @@ LOCAL_CFLAGS = -Wall -Werror -DDEFAULT_ZSL_MODE_ON -DDEFAULT_DENOISE_MODE_ON
 #Debug logs are enabled
 #LOCAL_CFLAGS += -DDISABLE_DEBUG_LOG
 
+ifeq ($(TARGET_QCOM_MEDIA_VARIANT),caf)
+LOCAL_C_INCLUDES := \
+        $(LOCAL_PATH)/../stack/common \
+        frameworks/native/include/media/hardware \
+        frameworks/native/include/media/openmax \
+        hardware/qcom/media-caf/libstagefrighthw \
+        $(LOCAL_PATH)/../../mm-image-codec/qexif \
+        $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
+        $(LOCAL_PATH)/../util
+LOCAL_C_INCLUDES += \
+        hardware/qcom/display-caf/libgralloc
+else
 LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../stack/common \
         frameworks/native/include/media/hardware \
@@ -29,13 +41,13 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../../mm-image-codec/qexif \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
         $(LOCAL_PATH)/../util
-
 ifneq ($(filter msm8974 msm8x74,$(TARGET_BOARD_PLATFORM)),)
 LOCAL_C_INCLUDES += \
         hardware/qcom/display/msm8974/libgralloc
 else
 LOCAL_C_INCLUDES += \
         hardware/qcom/display/msm8960/libgralloc
+endif
 endif
 
 LOCAL_SHARED_LIBRARIES := libcamera_client liblog libhardware libutils libcutils libdl
@@ -49,4 +61,3 @@ LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
 #include $(LOCAL_PATH)/test/Android.mk
-
