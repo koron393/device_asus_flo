@@ -51,7 +51,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 #BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 #-- ElementalX
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 l2_opt=1 vdd_uv=1 max_oc0=1998000 max_oc1=1998000 max_oc2=1998000 max_oc3=1998000 gpu_oc=1 min_clock=384000 abc
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 l2_opt=1 vdd_uv=1 max_oc0=1512000 max_oc1=1512000 max_oc2=1512000 max_oc3=1512000 gpu_oc=1 min_clock=384000 abc
 
 
 # Try to build the kernel
