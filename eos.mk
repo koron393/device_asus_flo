@@ -25,7 +25,7 @@ TARGET_SELINUX_CONFIG := flo_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 #Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME="razor" BUILD_FINGERPRINT="google/razor/flo:5.0/LRX21T/1576899:user/release-keys" PRIVATE_BUILD_DESC="razor-user 5.0 LRX21T 1576899 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razor BUILD_FINGERPRINT=google/razor/flo:5.0.1/LRX22C/1602158:user/release-keys PRIVATE_BUILD_DESC="razor-user 5.0.1 LRX22C 1602158 release-keys"
 
 # Copy device specific prebuilt files.
 PRODUCT_COPY_FILES += \
