@@ -1,6 +1,8 @@
 [
  {
-   "repository": "android_kernel_google_msm",
-   "target_path": "kernel/google/msm"
+   "remote":      "koron393",
+   "repository":  "android_kernel_google_msm",
+   "target_path": "kernel/asus/flo",
+   "revision":    "bs-lp5.0"
  }
 ]
