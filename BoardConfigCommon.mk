@@ -36,8 +36,8 @@ TARGET_KERNEL_SOURCE := kernel/asus/flo
 TARGET_KERNEL_CONFIG := flo_defconfig
 TARGET_VARIANT_CONFIG := flo_defconfig
 TARGET_SELINUX_CONFIG := flo_defconfig
-TARGET_KERNEL_TOOLCHAIN := arm-linux-androideabi-4.9
-TARGET_KERNEL_TOOLCHAIN_PREFIX := arm-linux-androideabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
+KERNEL_TOOLCHAIN_PREFIX := bin/arm-linux-androideabi-
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
