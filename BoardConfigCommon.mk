@@ -41,6 +41,10 @@ KERNEL_TOOLCHAIN_PREFIX := bin/arm-linux-androideabi-
 
 # QCOM enhancements
 BOARD_USES_QCOM_HARDWARE := true
+# Original stuff
+BOARD_USES_QCOM_DISPLAY := true
+BOARD_USES_QCOM_AUDIO := false
+BOARD_USES_QCOM_MEDIA := true
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
