@@ -32,12 +32,15 @@ BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Build the kernel
-TARGET_KERNEL_SOURCE := kernel/asus/flo
-TARGET_KERNEL_CONFIG := flo_defconfig
-TARGET_VARIANT_CONFIG := flo_defconfig
-TARGET_SELINUX_CONFIG := flo_defconfig
+TARGET_KERNEL_SOURCE := kernel/google/msm
+TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
+TARGET_VARIANT_CONFIG := cyanogen_flo_defconfig
+TARGET_SELINUX_CONFIG := cyanogen_flo_defconfig
 KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9
 KERNEL_TOOLCHAIN_PREFIX := bin/arm-linux-androideabi-
+
+# QCOM enhancements
+BOARD_USES_QCOM_HARDWARE := true
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
