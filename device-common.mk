@@ -20,17 +20,6 @@
 #
 # Everything in this directory will become public
 
-ifeq ($(CM_BUILD),)
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/asus/flo-kernel/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel
-endif
-
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
@@ -39,17 +28,17 @@ PRODUCT_AAPT_CONFIG := normal large hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 PRODUCT_PACKAGES := \
-    libwpa_client \
-    hostapd \
-    dhcpcd.conf \
-    wpa_supplicant \
-    wpa_supplicant.conf
+	libwpa_client \
+	hostapd \
+	dhcpcd.conf \
+	wpa_supplicant \
+	wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
 	lights.msm8960
 
 PRODUCT_PACKAGES += \
-    charger_res_images
+	charger_res_images
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
@@ -127,10 +116,10 @@ PRODUCT_COPY_FILES += \
 # Modem debugger
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_COPY_FILES += \
-    device/asus/flo/init.flo.diag.rc.userdebug:root/init.flo.diag.rc
+	device/asus/flo/init.flo.diag.rc.userdebug:root/init.flo.diag.rc
 else
 PRODUCT_COPY_FILES += \
-    device/asus/flo/init.flo.diag.rc.user:root/init.flo.diag.rc
+	device/asus/flo/init.flo.diag.rc.user:root/init.flo.diag.rc
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -191,10 +180,10 @@ PRODUCT_PACKAGES += \
 
 # Voice processing
 PRODUCT_PACKAGES += \
-    libqcomvoiceprocessing \
-    libqcomvoiceprocessingdescriptors
+	libqcomvoiceprocessing \
+	libqcomvoiceprocessingdescriptors
 PRODUCT_COPY_FILES += \
-    device/asus/flo/audio_effects.conf:system/vendor/etc/audio_effects.conf
+	device/asus/flo/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # Monitor device rotation for speaker channel swap
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -290,20 +279,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hwui.text_large_cache_height=1024
 
 PRODUCT_PACKAGES += \
-    power.flo
+	power.flo
 
 # NFC packages
 PRODUCT_PACKAGES += \
-    libnfc-nci \
-    libnfc_nci_jni \
-    NfcNci \
-    Tag
+	libnfc-nci \
+	libnfc_nci_jni \
+	NfcNci \
+	Tag
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
-    device/asus/flo/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
-    device/asus/flo/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
+	frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+	frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+	device/asus/flo/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+	device/asus/flo/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
 
 PRODUCT_LOCALES := en_US es_US de_DE zh_CN
 

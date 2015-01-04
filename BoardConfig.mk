@@ -24,4 +24,6 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/asus/flo
 
 TARGET_RECOVERY_FSTAB = device/asus/flo/fstab.flo
 
+BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
+
 include device/asus/flo/BoardConfigCommon.mk

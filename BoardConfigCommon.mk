@@ -34,6 +34,10 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/google/msm
 TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-linux-androideabi-4.9
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -91,9 +95,10 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_SECURE_SERVICES := true
 
-
+# Camera
 USE_CAMERA_STUB := false
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := false
+USE_DEVICE_SPECIFIC_CAMERA:= true
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_NO_RPC := true
@@ -111,45 +116,19 @@ TARGET_DISPLAY_USE_RETIRE_FENCE := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-USE_DEVICE_SPECIFIC_CAMERA:= true
-
 HAVE_ADRENO_SOURCE:= false
 
-BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
-
-# The list below is order dependent
-BOARD_SEPOLICY_UNION += \
-        bluetooth_loader.te \
-        bridge.te \
-        camera.te \
-        conn_init.te \
-        device.te \
-        domain.te \
-        file.te \
-        file_contexts \
-        hostapd.te \
-        irsc_util.te \
-        kickstart.te \
-        mediaserver.te \
-        mpdecision.te \
-        netmgrd.te \
-        property.te \
-        property_contexts \
-        qmux.te \
-        rild.te \
-        rmt.te \
-        sensors.te \
-        surfaceflinger.te \
-        system_server.te \
-        tee.te \
-        te_macros \
-        thermald.te \
-        ueventd.te
+# QCOM SELinux policies
+include device/qcom/sepolicy/sepolicy.mk
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+# Audio features
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
+AUDIO_FEATURE_ENABLED_LOW_LATENCY_CAPTURE := true
 
 -include vendor/asus/flo/BoardConfigVendor.mk

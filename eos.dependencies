@@ -1,0 +1,20 @@
+[
+ {
+   "remote":      "koron393",
+   "repository":  "vendor_asus",
+   "target_path": "vendor/asus",
+   "revision":    "lollipop"
+ },
+ {
+   "remote":      "koron393",
+   "repository":  "vendor_qcom",
+   "target_path": "vendor/qcom",
+   "revision":    "lollipop"
+ },
+ {
+   "remote":      "koron393",
+   "repository":  "vendor_qcom",
+   "target_path": "vendor/qcom",
+   "revision":    "lollipop"
+ }
+]
