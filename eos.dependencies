@@ -7,8 +7,8 @@
  },
  {
    "remote":      "koron393",
-   "repository":  "vendor_qcom",
-   "target_path": "vendor/qcom",
+   "repository":  "vendor_broadcom",
+   "target_path": "vendor/broadcom",
    "revision":    "lollipop"
  },
  {
