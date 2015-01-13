@@ -1,0 +1,18 @@
+# Drop (user, group) to (nobody, nobody)
+allow rmt_storage self:capability { setuid setgid };
+
+# opens and reads /dev/block/mmcblk0
+allow rmt_storage root_block_device:blk_file r_file_perms;
+
+allow rmt_storage self:socket create_socket_perms;
+allow rmt_storage cgroup:dir { create add_name };
+
+# Wake lock access
+wakelock_use(rmt_storage)
+
+# Allow access to /dev/uio0.
+allow rmt_storage uio_device:chr_file rw_file_perms;
+
+# rmt_storage shuts itself down if there is an unknown value of ro.baseband
+unix_socket_connect(rmt_storage, property, init)
+allow rmt_storage ctl_rmt_prop:property_service set;

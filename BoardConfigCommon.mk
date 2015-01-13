@@ -118,39 +118,17 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 HAVE_ADRENO_SOURCE:= false
 
+## QCOM SELinux policies
+include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
         bluetooth_loader.te \
-        bridge.te \
-        camera.te \
         conn_init.te \
-        device.te \
-        domain.te \
-        file.te \
-        file_contexts \
         hostapd.te \
-        irsc_util.te \
-        kickstart.te \
-        mediaserver.te \
-        mpdecision.te \
-        netmgrd.te \
-        property.te \
-        property_contexts \
-        qmux.te \
-        rild.te \
-        rmt.te \
-        sensors.te \
-        surfaceflinger.te \
-        system_server.te \
-        tee.te \
-        te_macros \
-        thermald.te \
-        ueventd.te
-
-# QCOM SELinux policies
-#include device/qcom/sepolicy/sepolicy.mk
+        tee.te
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
