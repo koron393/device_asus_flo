@@ -4,3 +4,7 @@ allow system_server mpdecision:unix_stream_socket sendto;
 # Read /data/misc/sensors or /data/system/sensors.
 allow system_server sensors_data_file:dir r_dir_perms;
 allow system_server sensors_data_file:file r_file_perms;
+
+# Access /dev/mdm
+allow system_server mdm_device:chr_file r_file_perms;
+allow system_server self:netlink_socket create_socket_perms;

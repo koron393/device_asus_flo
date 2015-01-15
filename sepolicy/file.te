@@ -1,5 +1,3 @@
-#type radio_efs_file, fs_type, contextmount_type;
-
 # Persist firmware types
 type persist_bluetooth_file, file_type;
 type persist_camera_file, file_type;
