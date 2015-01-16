@@ -294,6 +294,12 @@ PRODUCT_COPY_FILES += \
 	device/asus/flo/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
 	device/asus/flo/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
 
+# Hostapd
+PRODUCT_COPY_FILES += \
+	device/asus/flo/config/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
+	device/asus/flo/config/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
+	device/asus/flo/config/hostapd/hostapd.deny:system/etc/hostapd/hostapd.deny
+
 PRODUCT_LOCALES := en_US es_US de_DE zh_CN
 
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
