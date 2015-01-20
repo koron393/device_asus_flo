@@ -34,7 +34,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/google/msm
 TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-linux-androideabi-4.9
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := \
+    $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
