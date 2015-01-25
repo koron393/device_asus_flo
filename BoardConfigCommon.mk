@@ -88,7 +88,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_SECURE_SERVICES := true
 
-
 USE_CAMERA_STUB := false
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := false
 
@@ -141,6 +140,9 @@ BOARD_SEPOLICY_UNION += \
         te_macros \
         thermald.te \
         ueventd.te
+
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
 
 # Enable Minikin text layout engine (will be the default soon)
 USE_MINIKIN := true
