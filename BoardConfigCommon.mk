@@ -110,36 +110,18 @@ USE_DEVICE_SPECIFIC_CAMERA:= true
 
 HAVE_ADRENO_SOURCE:= false
 
+## QCOM SELinux policies
+include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
         bluetooth_loader.te \
-        bridge.te \
-        camera.te \
         conn_init.te \
-        device.te \
-        domain.te \
-        file.te \
-        file_contexts \
         hostapd.te \
-        irsc_util.te \
-        kickstart.te \
-        mediaserver.te \
-        mpdecision.te \
-        netmgrd.te \
-        property.te \
-        property_contexts \
-        qmux.te \
-        rild.te \
-        rmt.te \
-        sensors.te \
-        surfaceflinger.te \
-        system_server.te \
         tee.te \
-        te_macros \
-        thermald.te \
-        ueventd.te
+        sysinit.te
 
 # QCOM Power
 TARGET_POWERHAL_VARIANT := qcom

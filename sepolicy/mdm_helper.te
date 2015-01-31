@@ -1,0 +1,32 @@
+allow mdm_helper self:capability dac_override;
+auditallow mdm_helper self:capability dac_override;
+
+# Run mdm_helper_checker.sh
+allow mdm_helper shell_exec:file entrypoint;
+allow mdm_helper mdm_helper_exec:file getattr;
+
+# mdm_helper_checker.sh changes block devices
+# /dev/block/platform/msm_sdcc.1/by-name/m9kefs*
+allow mdm_helper self:capability { chown fowner };
+
+# Spawn /system/bin/efsks and /system/bin/ks
+allow mdm_helper mdm_helper_exec:file { open execute_no_trans getattr };
+
+# Access USB host ks bridge drivers
+allow mdm_helper efsbridgehsic_device:chr_file rw_file_perms;
+
+# Read and write to /dev/block/mmcblk0p[567]
+allow mdm_helper efs_boot_dev:blk_file setattr;
+
+# Wake lock access
+wakelock_use(mdm_helper)
+
+# Set property key gsm.radio.kickstart
+allow mdm_helper radio_prop:property_service set;
+unix_socket_connect(mdm_helper, property, init)
+
+# Access /sys/module/rmnet_usb/parameters/rmnet_data_init
+allow mdm_helper sysfs_rmnet:file w_file_perms;
+
+#allow mdm_helper radio_efs_file:dir search;
+#allow mdm_helper radio_efs_file:file r_file_perms;
