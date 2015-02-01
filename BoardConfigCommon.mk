@@ -120,8 +120,9 @@ BOARD_SEPOLICY_UNION += \
         bluetooth_loader.te \
         conn_init.te \
         hostapd.te \
-        tee.te \
-        sysinit.te
+        su.te \
+        sysinit.te \
+        tee.te
 
 # QCOM Power
 TARGET_POWERHAL_VARIANT := qcom
