@@ -1,0 +1,6 @@
+# init blkid
+type_transition init system_file:{ dir file } etc_runtime_t;
+allow init system_file:dir { rw_dir_perms setattr };
+allow init system_file:file setattr;
+allow init etc_runtime_t:dir { rw_dir_perms setattr };
+allow init etc_runtime_t:file create_file_perms;
