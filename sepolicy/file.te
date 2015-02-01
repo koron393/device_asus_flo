@@ -1,3 +1,6 @@
+# init blkid
+type etc_runtime_t, file_type;
+
 # Persist firmware types
 type persist_bluetooth_file, file_type;
 type persist_camera_file, file_type;
