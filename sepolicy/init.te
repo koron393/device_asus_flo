@@ -1,3 +1,5 @@
+allow init diag_device:chr_file unlink;
+
 # init blkid
 type_transition init system_file:{ dir file } etc_runtime_t;
 allow init system_file:dir { rw_dir_perms setattr };
