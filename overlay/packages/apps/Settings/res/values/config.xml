@@ -15,10 +15,8 @@
 -->
 
 <resources>
-<!-- Volume Rocker Wake Support. Some devices do not support (PMU) this.
-     Setting to false will disable Volume Rocker Wake support -->
-<bool name="config_show_volumeRockerWake">false</bool>
+    <!-- Volume key screen off options. Some devices do not support (PMU) this.
+         Setting to false will disable Volume key screen off options -->
+    <bool name="config_supports_volumeKeyScreenOffOptions">false</bool>
 
-<!-- Volume Rocker media control Support -->
-<bool name="config_show_VolumeKeysControlMedia">false</bool>
 </resources>
