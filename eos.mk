@@ -19,9 +19,9 @@ PRODUCT_MANUFACTURER := Asus
 
 # Build the kernel
 TARGET_KERNEL_SOURCE := kernel/asus/flo
-TARGET_KERNEL_CONFIG := flo_defconfig
-TARGET_VARIANT_CONFIG := flo_defconfig
-TARGET_SELINUX_CONFIG := flo_defconfig
+TARGET_KERNEL_CONFIG := eos_flo_defconfig
+TARGET_VARIANT_CONFIG := eos_flo_defconfig
+TARGET_SELINUX_CONFIG := eos_flo_defconfig
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 
 #Set build fingerprint / ID / Product Name ect.
