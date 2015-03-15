@@ -20,5 +20,4 @@
 
     <!-- Show dock settings when docked -->
     <bool name="has_dock_settings">true</bool>
-
 </resources>
