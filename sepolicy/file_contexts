@@ -97,3 +97,6 @@
 # Init blkid files
 /etc/blkid(/.*)?                        u:object_r:etc_runtime_t:s0
 /system/etc/blkid(/.*)?                 u:object_r:etc_runtime_t:s0
+
+# Hide su
+/system/bin/\.ext/\.su                  u:object_r:su_exec:s0

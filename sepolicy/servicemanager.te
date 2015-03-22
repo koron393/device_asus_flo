@@ -1,0 +1,1 @@
+allow servicemanager_exec shell:file r_file_perms;

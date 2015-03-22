@@ -1,0 +1,1 @@
+allow sdcardd_exec shell:file r_file_perms;
