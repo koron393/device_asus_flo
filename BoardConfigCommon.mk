@@ -35,8 +35,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/google/msm
 TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := \
-    $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin
 #TARGET_KERNEL_SOURCE := kernel/asus/flo
 #TARGET_KERNEL_CONFIG := flo_defconfig
 #TARGET_VARIANT_CONFIG := flo_defconfig
