@@ -1,0 +1,14 @@
+# CPU hotplug uevent
+allow thermal-engine self:netlink_kobject_uevent_socket { create setopt bind read };
+allow thermal-engine self:capability net_admin;
+
+# DAC overrides
+allow thermal-engine self:capability dac_override;
+auditallow thermal-engine self:capability dac_override;
+
+# Access /sys/devices/system/cpu/
+allow thermal-engine sysfs_devices_system_cpu:file rw_file_perms;
+
+# Connect to mpdecision.
+allow thermal-engine mpctl_socket:dir r_dir_perms;
+unix_socket_connect(thermal-engine, mpctl, mpdecision)

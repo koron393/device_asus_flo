@@ -29,11 +29,24 @@ BOARD_KERNEL_PAGESIZE := 2048
 # BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=msm8960 maxcpus=2
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += vmalloc=340M
+BOARD_KERNEL_CMDLINE += androidboot.bootdevice=msm_sdcc.1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/google/msm
 TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := \
+    $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
+#TARGET_KERNEL_SOURCE := kernel/asus/flo
+#TARGET_KERNEL_CONFIG := flo_defconfig
+#TARGET_VARIANT_CONFIG := flo_defconfig
+#TARGET_SELINUX_CONFIG := flo_defconfig
+
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -80,6 +93,7 @@ endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 880803840 # 840M
@@ -88,7 +102,6 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 12348030976 # 11.5G
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_SECURE_SERVICES := true
-
 
 USE_CAMERA_STUB := false
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := false
@@ -113,36 +126,22 @@ USE_DEVICE_SPECIFIC_CAMERA:= true
 
 HAVE_ADRENO_SOURCE:= false
 
+## QCOM SELinux policies
+include device/qcom/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += device/asus/flo/sepolicy
 
 # The list below is order dependent
 BOARD_SEPOLICY_UNION += \
         bluetooth_loader.te \
-        bridge.te \
-        camera.te \
         conn_init.te \
-        device.te \
-        domain.te \
-        file.te \
-        file_contexts \
         hostapd.te \
-        irsc_util.te \
-        kickstart.te \
-        mediaserver.te \
-        mpdecision.te \
-        netmgrd.te \
-        property.te \
-        property_contexts \
-        qmux.te \
-        rild.te \
-        rmt.te \
-        sensors.te \
-        surfaceflinger.te \
-        system_server.te \
-        tee.te \
-        te_macros \
-        thermald.te \
-        ueventd.te
+        su.te \
+        sysinit.te \
+        tee.te
+
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
