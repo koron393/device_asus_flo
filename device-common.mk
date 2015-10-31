@@ -285,7 +285,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.sys.usb.config=mtp,adb
 
 # set USB OTG enabled to add support for USB storage type
 PRODUCT_PROPERTY_OVERRIDES += \
