@@ -4,7 +4,7 @@
 
 QCOM_KEYMASTER_FILES="keymaster.b00 keymaster.b01 keymaster.b02 keymaster.b03 keymaster.mdt"
 QCOM_LIB_FILES="libQSEEComAPI.so"
-QCOM_PATH="$1/vendor/qcom/flo/proprietary/"
+QCOM_PATH="$1/vendor/asus/flo/proprietary/vendor/firmware/keymaster/"
 
 cp -a "${QCOM_PATH}/libQSEEComAPI.so" "$2/"
 

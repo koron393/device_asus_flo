@@ -33,12 +33,12 @@ $(shell mkdir -p out/target/product/hammerhead/recovery/root/vendor/firmware/key
 $(shell mkdir -p out/target/product/hammerhead/recovery/root/vendor/lib/hw)
 
 PRODUCT_COPY_FILES += \
-    vendor/qcom/flo/proprietary/keymaster.b00:recovery/root/vendor/firmware/keymaster/keymaster.b00 \
-    vendor/qcom/flo/proprietary/keymaster.b01:recovery/root/vendor/firmware/keymaster/keymaster.b01 \
-    vendor/qcom/flo/proprietary/keymaster.b02:recovery/root/vendor/firmware/keymaster/keymaster.b02 \
-    vendor/qcom/flo/proprietary/keymaster.b03:recovery/root/vendor/firmware/keymaster/keymaster.b03 \
-    vendor/qcom/flo/proprietary/keymaster.mdt:recovery/root/vendor/firmware/keymaster/keymaster.mdt \
-    vendor/qcom/flo/proprietary/libQSEEComAPI.so:recovery/root/sbin/libQSEEComAPI.so \
+    vendor/asus/flo/proprietary/vendor/firmware/keymaster/keymaster.b00:recovery/root/vendor/firmware/keymaster/keymaster.b00 \
+    vendor/asus/flo/proprietary/vendor/firmware/keymaster/keymaster.b01:recovery/root/vendor/firmware/keymaster/keymaster.b01 \
+    vendor/asus/flo/proprietary/vendor/firmware/keymaster/keymaster.b02:recovery/root/vendor/firmware/keymaster/keymaster.b02 \
+    vendor/asus/flo/proprietary/vendor/firmware/keymaster/keymaster.b03:recovery/root/vendor/firmware/keymaster/keymaster.b03 \
+    vendor/asus/flo/proprietary/vendor/firmware/keymaster/keymaster.mdt:recovery/root/vendor/firmware/keymaster/keymaster.mdt \
+    vendor/asus/flo/proprietary/lib/libQSEEComAPI.so:recovery/root/sbin/libQSEEComAPI.so \
     device/asus/flo/recovery/keystore.msm8960.so:recovery/root/vendor/lib/hw/keystore.msm8960.so
 
 
