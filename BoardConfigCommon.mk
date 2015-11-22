@@ -22,6 +22,12 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
+
 TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_BASE := 0x80200000
@@ -34,6 +40,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/google/msm
 TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
+#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
