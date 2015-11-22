@@ -1,7 +1,15 @@
 [
  {
-   "repository": "android_kernel_google_msm",
-   "target_path": "kernel/google/msm"
+   "repository":  "android_kernel_google_msm",
+   "target_path": "kernel/google/msm",
+   "remote":      "koron393",
+   "revision":    "cm-13.0-caf"
+ },
+ {
+   "repository":  "TheMuppets/proprietary_vendor_asus",
+   "target_path": "vendor/asus",
+   "remote":      "github",
+   "revision":    "cm-13.0"
  },
  {
    "repository": "android_external_stlport",
