@@ -135,4 +135,7 @@ EXTENDED_FONT_FOOTPRINT := true
 
 USE_CLANG_PLATFORM_BUILD := true
 
+# Not block based
+BLOCK_BASED_OTA := false
+
 -include vendor/asus/flo/BoardConfigVendor.mk
