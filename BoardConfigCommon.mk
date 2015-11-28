@@ -133,8 +133,6 @@ USE_MINIKIN := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-USE_CLANG_PLATFORM_BUILD := true
-
 # Not block based
 BLOCK_BASED_OTA := false
 
