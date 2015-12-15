@@ -134,6 +134,17 @@ USE_MINIKIN := true
 EXTENDED_FONT_FOOTPRINT := true
 
 # Not block based
-BLOCK_BASED_OTA := false
+BLISS_BUILD_BLOCK := 0
+
+# Bliss optimization
+TARGET_TC_ROM := 4.9-linaro
+TARGET_TC_KERNEL := 4.9-linaro
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+BLISS_O3 := false
+BLISS_GRAPHITE := false
+BLISS_STRICT := false
+BLISS_KRAIT := true
+BLISS_PIPE := true
 
 -include vendor/asus/flo/BoardConfigVendor.mk
