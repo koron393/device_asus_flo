@@ -2,8 +2,8 @@
  {
    "remote": "github",
    "repository": "koron393/android_kernel_google_msm",
-   "target_path": "kernel/google/msm",
-   "revision": "cm-13.0-caf"
+   "target_path": "kernel/asus/flo",
+   "revision": "mm6.0-quanta"
  },
  {
    "remote": "cm",
