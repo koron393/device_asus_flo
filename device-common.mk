@@ -23,6 +23,10 @@
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
+# Viper for Android
+BLISS_AUDIO_MOD := viper
+
+
 PRODUCT_PACKAGES := \
     libwpa_client \
     hostapd \
