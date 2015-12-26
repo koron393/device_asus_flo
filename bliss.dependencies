@@ -16,5 +16,11 @@
    "repository": "TheMuppets/proprietary_vendor_asus",
    "target_path": "vendor/asus",
    "revision": "cm-13.0"
+ },
+ {
+   "remote": "github",
+   "repository": "BlissRoms-Devices/android_device_qcom_common",
+   "target_path": "device/qcom/common",
+   "revision": "mm6.0"
  }
 ]
