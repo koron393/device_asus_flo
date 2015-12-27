@@ -39,9 +39,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/asus/flo
-TARGET_KERNEL_CONFIG := quanta_defconfig
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin
+TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -138,7 +136,7 @@ BLISS_BUILD_BLOCK := 0
 
 # Bliss optimization
 TARGET_TC_ROM := 4.9-linaro
-TARGET_TC_KERNEL := 4.9-linaro
+TARGET_TC_KERNEL := 5.3-sm
 TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
 BLISS_O3 := false
